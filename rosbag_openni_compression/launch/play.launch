@@ -35,7 +35,7 @@
 	    <param name="out" type="str" value="/$(arg camera)/rgb/image_raw"/>
     </node>
     -->
-    <node pkg="image_transport" type="republish" name="rgb_decompressor" output="screen" args="theora in:=$(arg compressed_rgb) raw out:=/$(arg camera)/rgb/image_raw"/>
+    <node pkg="image_transport" type="republish" name="rgb_decompressor" output="screen" args="compressed in:=$(arg compressed_rgb) raw out:=/$(arg camera)/rgb/image_raw"/>
     
     <!-- Launch the rosbag -->
     <node pkg="rosbag" type="play" name="player" output="screen" args="$(arg file) --clock"/>
